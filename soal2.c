@@ -40,8 +40,6 @@ int dfs(int r, int c){
     int dc[4] = {0, 0, -1, 1};
     int arah, nr, nc, ukr = 1;
 
-    peta [r][c] = '0';
-
     for (arah = 0; arah < 4; arah++) {
         nr = r + dr[arah];
         nc = c + dc[arah];
