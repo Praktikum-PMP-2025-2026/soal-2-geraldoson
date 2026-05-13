@@ -42,11 +42,11 @@ int dfs(int r, int c){
 
     peta [r][c] = '0';
 
-    for(arah = 0; arah < 4; arah++){
-        nr = r + dc[arah];
+    for (arah = 0; arah < 4; arah++) {
+        nr = r + dr[arah];
         nc = c + dc[arah];
 
-        if(nr >= 0 && nr <= brs && nc >= 0 && nc <= klm && peta[nr][nc] == '1'){
+        if (nr >= 0 && nr < brs && nc >= 0 && nc < klm && peta[nr][nc] == '1') {
             ukr = ukr + dfs(nr, nc);
         }
     }
@@ -58,24 +58,24 @@ int main(){
 
     scanf("%d %d", &brs, &klm);
 
-    for(i = 0; i < brs; i++){
+    for (i = 0; i < brs; i++) {
         scanf("%s", peta[i]);
     }
 
-    for(i = 0; i < brs; i++){
-        for(j = 0; j < klm; j++){
-            if(peta[i][j] == '1'){
+    for (i = 0; i < brs; i++) {
+        for (j = 0; j < klm; j++) {
+            if (peta[i][j] == '1') {
                 jmlhPulau++;
                 ukr = dfs(i, j);
 
-                if(ukr > ukrMax){
+                if (ukr > ukrMax) {
                     ukrMax = ukr;
                 }
             }
         }
     }
 
-    printf("ISLAND %d\n", jmlhPulau);
+    printf("ISLANDS %d\n", jmlhPulau);
     printf("LARGEST %d\n", ukrMax);
 
     return 0;
