@@ -61,7 +61,7 @@ int main(){
     }
 
     for(i = 0; i < brs; i++){
-        for(j = 0; j < brs; j++){
+        for(j = 0; j < klm; j++){
             if(peta[i][j] == '1'){
                 jmlhPulau++;
                 ukr = dfs(i, j);
