@@ -38,7 +38,9 @@ int brs, klm;
 int dfs(int r, int c){
     int dr[4] = {-1, 1, 0, 0};
     int dc[4] = {0, 0, -1, 1};
-    int arah, nr, nc, ukr;
+    int arah, nr, nc, ukr = 0;
+
+    peta [r][c] = '0';
 
     for(arah = 0; arah < 4; arah++){
         nr = r + dc[arah];
