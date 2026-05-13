@@ -38,13 +38,13 @@ int brs, klm;
 int dfs(int r, int c){
     int dr[4] = {-1, 1, 0, 0};
     int dc[4] = {0, 0, -1, 1};
-    int arah, nr, nc, ukr = 1;
+    int arah, nr, nc, ukr;
 
     for(arah = 0; arah < 4; arah++){
         nr = r + dc[arah];
         nc = c + dc[arah];
 
-        if(nr >= 0 && nr <= brs && nc >= 0 && nc <= klm && peta[nr][nc == '1']){
+        if(nr >= 0 && nr <= brs && nc >= 0 && nc <= klm && peta[nr][nc] == '1'){
             ukr = ukr + dfs(nr, nc);
         }
     }
